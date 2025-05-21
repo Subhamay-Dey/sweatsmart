@@ -6,6 +6,7 @@ import "./globals.css";
 import ConvexClientProvider from '@/provider/ConvexClerkProvider';
 import Navbar from '@/components/Navbar';
 import Background from '@/components/Background';
+import Footer from '@/components/Footer';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +38,7 @@ export default function RootLayout({
             <main className='pt-24 flex-grow'>
               {children}
             </main>
-
+            <Footer/>
           </body>
         </html>
       </ConvexClientProvider>
