@@ -7,7 +7,7 @@ import { httpAction } from "./_generated/server";
 const http = httpRouter();
 
 http.route({
-    path: "clerk-webhook",
+    path: "/clerk-webhook",
     method: "POST",
     handler: httpAction(async (ctx, request) => {
         const webhookSecret = process.env.CLERK_WEBHOOK_SECRET as string;
