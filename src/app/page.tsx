@@ -1,3 +1,4 @@
+import TerminalOverlay from "@/components/TerminalOverlay";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
@@ -106,12 +107,15 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
                 </div>
 
+                {/* TERMINAL OVERLAY */}
+                <TerminalOverlay />
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* <UserPrograms /> */}
     </div>
   )
 }
