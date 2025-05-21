@@ -1,5 +1,6 @@
 import TerminalOverlay from "@/components/TerminalOverlay";
 import { Button } from "@/components/ui/button";
+import UserPrograms from "@/components/UsersPrograms";
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 
@@ -115,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <UserPrograms /> */}
+      <UserPrograms />
     </div>
   )
 }
