@@ -85,6 +85,30 @@ function GenerateProgram() {
     }
   }, [])
   
+  const toggleCall = async() => {
+    if(callActive) {
+      vapi.stop();
+    } else {
+      try {
+        setConnecting(true);
+        setMessages([]);
+        setCallEnded(false);
+
+        const fullname = user?.firstName ? `${user.firstName} ${user.lastName || ""}`.trim() : "there";
+
+        await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!, {
+          variableValues: {
+            full_name: fullname,
+          },
+          clientMessages: [],
+          serverMessages: []
+        })
+      } catch (error) {
+        console.log("Error starting call:", error);
+        setConnecting(false);
+      }
+    }
+  }
 
   return (
     <div>GenerateProgram</div>
