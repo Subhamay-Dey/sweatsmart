@@ -18,6 +18,21 @@ function GenerateProgram() {
   const messageContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if(messageContainerRef.current) {
+      messageContainerRef.current.scrollTop = messageContainerRef.current.scrollHeight;
+    }
+  }, [messages])
+
+  useEffect(() => {
+    if(callEnded) {
+      const timer = setTimeout(() => {
+        router.push("/profile");
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [callEnded, router])
+
+  useEffect(() => {
     const handleCallStart = () => {
       console.log("Call started");
       setCallActive(true);
