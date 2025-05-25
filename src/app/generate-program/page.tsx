@@ -111,7 +111,9 @@ function GenerateProgram() {
   }
 
   return (
-    <div>GenerateProgram</div>
+    <div className='flex flex-col main-h-screen text-foreground overflow-hidden pb-6 pt-24'>
+      
+    </div>
   )
 }
 
